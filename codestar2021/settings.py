@@ -34,7 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["codestar2021.herokuapp.com", "localhost"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,12 +42,26 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-
-    'blog'
+    'django_summernote',
+    'crispy_forms',
+    'blog',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+CRIPSY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
